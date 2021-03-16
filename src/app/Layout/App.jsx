@@ -1,9 +1,19 @@
 /** @format */
-import React from 'react';
-import './style.css';
+import React, { useState } from 'react';
+import { Container } from 'semantic-ui-react';
+import EventDashboard from '../../feature/events/eventDashboard/EventDashboard';
+import NavBar from '../../feature/Nav/NavBar';
 
 function App() {
-  return <div className='App'>Revent</div>;
+  const [formOpen, setFormOpen] = useState(false);
+  return (
+    <>
+      <NavBar setFormOpen={setFormOpen} />
+      <Container className='main'>
+        <EventDashboard formOpen={formOpen} setFormOpen={setFormOpen} />
+      </Container>
+    </>
+  );
 }
 
 export default App;
